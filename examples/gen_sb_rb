@@ -1,0 +1,7 @@
+date
+openscad -D MODEL='"body"' -o ~/Downloads/sb_rb_body.stl sb_rainbox.scad
+date
+openscad -D MODEL='"lid"' -o ~/Downloads/sb_rb_lid.stl sb_rainbox.scad
+date
+openscad -D MODEL='"bottom"' -o ~/Downloads/sb_rb_bottom.stl sb_rainbox.scad
+date

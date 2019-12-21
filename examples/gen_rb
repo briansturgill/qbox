@@ -1,0 +1,5 @@
+date
+openscad -D MODEL='"box"' -o ~/Downloads/rb_box.stl rainbox.scad
+date
+openscad -D MODEL='"slid"' -o ~/Downloads/rb_lid.stl rainbox.scad
+date

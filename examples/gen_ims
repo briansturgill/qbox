@@ -1,0 +1,5 @@
+date
+openscad -D MODEL='"box"' -o ~/Downloads/sims_box.stl indoor_motion_sensor.scad
+date
+openscad -D MODEL='"slid"' -o ~/Downloads/sims_lid.stl indoor_motion_sensor.scad
+date

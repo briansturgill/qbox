@@ -1,0 +1,9 @@
+date
+openscad -D MODEL='"body"' -o ~/Downloads/intercom_body.stl intercom.scad
+date
+openscad -D MODEL='"lid"' -o ~/Downloads/intercom_lid.stl intercom.scad
+date
+openscad -D MODEL='"bottom"' -o ~/Downloads/intercom_bottom.stl intercom.scad
+date
+openscad -D MODEL='"glue"' -o ~/Downloads/intercom_glue.stl intercom.scad
+date
