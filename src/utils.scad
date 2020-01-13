@@ -1,9 +1,17 @@
-module tap_post(h, size, post_wall=2) {
+module tap_post(h, size, post_wall=2, add_taper=false, z_rot=0) {
     inner_d = size*0.8; //Possibly snug, but with PLA I prefer that
     outer_d = post_wall*2+size;
     difference() {
         linear_extrude(h) circle(outer_d/2.0);
         translate([0, 0, -1]) linear_extrude(h+2) circle(inner_d/2.0); 
+    }
+    if (add_taper) {
+        translate([0, 0, -h*2]) difference() {
+            linear_extrude(h*2) circle(outer_d/2.0);
+            translate([0, 0, -1]) linear_extrude(h*2+2) circle(inner_d/2.0);
+            rotate([45, 0, z_rot]) translate([0,0,h])
+                cube([outer_d, outer_d, h*3+2], center=true);
+        }
     }
 }
 

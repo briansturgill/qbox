@@ -39,7 +39,7 @@ module simple_box_bottom() {
     }
 }
 
-module simple_box_body(add_posts=false) {
+module simple_box_body(add_posts=true) {
     difference() {
         translate([-wall, -wall, 0])
             linear_extrude(h)
@@ -52,13 +52,13 @@ module simple_box_body(add_posts=false) {
         post_ctr = fillet-2;
         // 2 is default post wall size, but we use 4 below to anchor solidly
         translate([post_ctr, post_ctr, h-8])
-            tap_post(8, lid_hole_size, 4);
+            tap_post(8, lid_hole_size, 4, add_taper=true, z_rot=180-45);
         translate([post_ctr, d-post_ctr, h-8])
-            tap_post(8, lid_hole_size, 4);
+            tap_post(8, lid_hole_size, 4, add_taper=true, z_rot=45);
         translate([w-post_ctr, post_ctr, h-8])
-            tap_post(8, lid_hole_size, 4);
+            tap_post(8, lid_hole_size, 4, add_taper=true, z_rot=180+45);
         translate([w-post_ctr, d-post_ctr, h-8])
-            tap_post(8, lid_hole_size, 4);
+            tap_post(8, lid_hole_size, 4, add_taper=true, z_rot=-45);
     }
 }
 

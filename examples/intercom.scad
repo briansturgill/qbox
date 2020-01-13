@@ -15,6 +15,8 @@ include <../src/simple_box.scad>;
 include <../src/utils.scad>;
 include <../src/components.scad>;
 
+use_markers = false; // Use markers instead of printing side wall items.
+
 spk_hole_spacing = 41;
 module speaker() {
     translate([0, 0, 0]) tap_post(6, 3);
@@ -31,12 +33,16 @@ module speaker_holes() {
 module make_body() {
     difference() {
         union() {
-            simple_box_body(add_posts=true);
-            left(d/2, 2*(h/3)) bme280();
+            simple_box_body();
+            if (! use_markers) {
+                left(d/2, 2*(h/3)) bme280();
+            }
         }
         right(d/2, h-15) horizontal_slot_hole(12, 7); // Slot for micro-usb
+        if (use_markers) {
+            left(d/2, 2*(h/3)) bme280_marker();
+        }
         left(d/2, 2*(h/3)) bme280_hole();
-        //left(d/2, 2*(h/3)) bme280_marker();
     }
 }
 
