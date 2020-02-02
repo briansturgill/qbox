@@ -73,3 +73,15 @@ module wire_tie_loop() {
         cube([2+2*tiny, 3, 2], center=true);
     }
 }
+
+module usb_breakout() {
+    rotate([0, 90, 90]) {
+        translate([-7, -4, 0]) tap_post(6, 3);
+        translate([-7, 4, 0]) tap_post(6, 3);
+    }
+}
+
+module usb_breakout_hole() {
+    translate([0, 6+2+1.5, 0])
+        horizontal_slot_hole(8, 3);
+}

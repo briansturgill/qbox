@@ -33,8 +33,9 @@ module make_box() {
     difference() {
         union() {
             filleted_box();
+            right(d/2, 0) usb_breakout();
         }
-        right(d/2, 15) horizontal_slot_hole(12, 7); // Slot for micro-usb
+        right(d/2, 0) usb_breakout_hole();
     }
 }
 
@@ -46,7 +47,7 @@ module make_shell_lid() {
             bottom(spk_off+8, spk_off) speaker();
         }
         bottom(spk_off+8, spk_off) speaker_holes();
-        bottom(w-22, d/2) hole(6); // 12mm d pushbutton
+        bottom(w-22, d/2) hole(6.3); // 12.6mm d pushbutton
     }
 }
 
